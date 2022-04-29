@@ -31,10 +31,14 @@ function App() {
 
           <div className="buttons">
             {/* Clicking this button will have tiger king size go up by one */}
-            <button onClick={() => setTigerKingSize(tigerKingSize + 1)}>Oh no!</button>
+            <button onClick={() => setTigerKingSize(tigerKingSize + 1)}>
+              Ima Shoot you before I shoot my cat
+            </button>
 
             {/* Clicking this button will make carole basking size go up by one */}
-            <button onClick={() => setTigerQueenSize(tigerQueenSize - 1)}>Amazing!</button>
+            <button onClick={() => setTigerQueenSize(tigerQueenSize - 1)}>
+              The womans just obsessed with me!
+            </button>
           </div>
         </div>
 
@@ -44,11 +48,13 @@ function App() {
           <div className="buttons">
             {/* Clicking this will make carole basking size go up by one */}
             <button onClick={() => setTigerQueenSize(tigerQueenSize + 1)}>
-              Tiger Queen Winning!
+              Hey all you cool cats and kittens!
             </button>
 
             {/* Clicking this will make joe exotic size go up by one */}
-            <button onClick={() => setTigerKingSize(tigerKingSize + 1)}>Joe Exotic Winning!</button>
+            <button onClick={() => setTigerKingSize(tigerKingSize + 1)}>
+              I really appreciate the fact that none of these people like me
+            </button>
           </div>
         </div>
       </div>
