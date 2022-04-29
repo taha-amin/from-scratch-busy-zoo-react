@@ -8,6 +8,9 @@ function App() {
   //track states for stop lights, animal sizes, and animal parade
   const [isOpen, setIsOpen] = useState('red');
 
+  const [tigerKingSize, setTigerKingSize] = useState(10);
+  const [tigerQueenSize, setTigerQueenSize] = useState(10);
+
   return (
     // how onClick will look for each event
     // <button onClick={() => setIsOpen('true')}
@@ -22,6 +25,34 @@ function App() {
     // <button onClick={() => setParade([...parade, 'Monkey'])}>Monkey</button>
 
     <div className="App">
+      <div className="fight">
+        <div className="monster">
+          <img src="tigerking.png" width={10 * tigerKingSize} />
+
+          <div className="buttons">
+            {/* Clicking this button will have tiger king size go up by one */}
+            <button onClick={() => setTigerKingSize(tigerKingSize + 1)}>Oh no!</button>
+
+            {/* Clicking this button will make carole basking size go up by one */}
+            <button onClick={() => setTigerQueenSize(tigerQueenSize - 1)}>Amazing!</button>
+          </div>
+        </div>
+
+        <div className="monster">
+          <img src="caroleBaskin.png" width={10 * tigerQueenSize} />
+
+          <div className="buttons">
+            {/* Clicking this will make carole basking size go up by one */}
+            <button onClick={() => setTigerQueenSize(tigerQueenSize + 1)}>
+              Tiger Queen Winning!
+            </button>
+
+            {/* Clicking this will make joe exotic size go up by one */}
+            <button onClick={() => setTigerKingSize(tigerKingSize + 1)}>Joe Exotic Winning!</button>
+          </div>
+        </div>
+      </div>
+
       <IsOpen isOpen={isOpen} />
       <div className="buttons">
         <button onClick={() => setIsOpen('red')}>Red</button>
