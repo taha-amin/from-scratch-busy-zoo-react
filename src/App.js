@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 
 import IsOpen from './OpenSign';
+import Parade from './AnimalParade';
 
 function App() {
   //track states for stop lights, animal sizes, and animal parade
@@ -10,6 +11,8 @@ function App() {
 
   const [tigerKingSize, setTigerKingSize] = useState(10);
   const [tigerQueenSize, setTigerQueenSize] = useState(10);
+
+  const [traffic, setTraffic] = useState(['cheetah', 'tiger']);
 
   return (
     // how onClick will look for each event
@@ -64,6 +67,13 @@ function App() {
         <button onClick={() => setIsOpen('red')}>Red</button>
         <button onClick={() => setIsOpen('yellow')}>Yellow</button>
         <button onClick={() => setIsOpen('green')}>Green</button>
+      </div>
+
+      <Parade animals={traffic} />
+      <div className="buttons">
+        <button onClick={() => setTraffic([...traffic, 'cheetah'])}>Cheetah</button>
+        <button onClick={() => setTraffic([...traffic, 'tiger'])}>Tiger</button>
+        <button onClick={() => setTraffic([...traffic, 'panther'])}>Panther</button>
       </div>
     </div>
   );
