@@ -1,8 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+import IsOpen from './OpenSign';
 
 function App() {
   //track states for stop lights, animal sizes, and animal parade
+  const [isOpen, setIsOpen] = useState('red');
 
   return (
     // how onClick will look for each event
@@ -18,20 +22,12 @@ function App() {
     // <button onClick={() => setParade([...parade, 'Monkey'])}>Monkey</button>
 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <isOpen color={isOpen} />
+      <div className="buttons">
+        <button onClick={() => setIsOpen('red')}>Red</button>
+        <button onClick={() => setIsOpen('yellow')}>Yellow</button>
+        <button onClick={() => setIsOpen('green')}>Green</button>
+      </div>
     </div>
   );
 }
