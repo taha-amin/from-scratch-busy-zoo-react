@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
 import { useState } from 'react';
+import './App.css';
 
 import IsOpen from './OpenSign';
 
@@ -22,7 +22,7 @@ function App() {
     // <button onClick={() => setParade([...parade, 'Monkey'])}>Monkey</button>
 
     <div className="App">
-      <isOpen color={isOpen} />
+      <IsOpen isOpen={isOpen} />
       <div className="buttons">
         <button onClick={() => setIsOpen('red')}>Red</button>
         <button onClick={() => setIsOpen('yellow')}>Yellow</button>
