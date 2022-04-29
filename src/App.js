@@ -52,7 +52,7 @@ function App() {
             </button>
 
             {/* Clicking this will make joe exotic size go up by one */}
-            <button onClick={() => setTigerKingSize(tigerKingSize + 1)}>
+            <button onClick={() => setTigerKingSize(tigerKingSize - 1)}>
               I really appreciate the fact that none of these people like me
             </button>
           </div>
