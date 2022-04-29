@@ -84,3 +84,29 @@ body {
 .on {
   opacity: 1;
 }
+
+.fight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: 40px;
+  width: 80%;
+  border-radius: 50px;
+  background-color: rgba(255, 170, 51, 0.7);
+}
+
+.fight .monster {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fight .monster .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
