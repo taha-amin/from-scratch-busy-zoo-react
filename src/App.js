@@ -7,7 +7,7 @@ import Parade from './AnimalParade';
 
 function App() {
   //track states for stop lights, animal sizes, and animal parade
-  const [isOpen, setIsOpen] = useState('Hello World!');
+  const [isOpen, setIsOpen] = useState('');
 
   const [tigerKingSize, setTigerKingSize] = useState(10);
   const [tigerQueenSize, setTigerQueenSize] = useState(10);
@@ -52,11 +52,15 @@ function App() {
 
       <IsOpen isOpen={isOpen} />
       <div className="buttons">
+        {/* <button onClick={() => setIsOpen('red')}>Red</button>
+        <button onClick={() => setIsOpen('yellow')}>Yellow</button>
+        <button onClick={() => setIsOpen('green')}>Green</button> */}
+
         <button onClick={() => setIsOpen('My name is Joe Exotic and we are open for business')}>
-          Open
+          Open Zoo
         </button>
         <button onClick={() => setIsOpen('I am never going to financially recover from this')}>
-          Close
+          Close Zoo
         </button>
       </div>
 
