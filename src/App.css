@@ -109,3 +109,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.traffic {
+  display: flex;
+}
+
+.traffic .animals {
+  margin: 10px;
+}
