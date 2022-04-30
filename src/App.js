@@ -5,9 +5,31 @@ import './App.css';
 import IsOpen from './OpenSign';
 import Parade from './AnimalParade';
 
+import TigerKing from '../src/HeyAllYou.mp3';
+import CaroleBasking from '../src/ImNever.mp3';
+
 function App() {
   //track states for stop lights, animal sizes, and animal parade
+  const audio = new Audio(TigerKing);
+  const audioTwo = new Audio(CaroleBasking);
+
   const [isOpen, setIsOpen] = useState(true);
+
+  function playTigerKing() {
+    audio.play();
+  }
+  function playCaroleBaskin() {
+    audioTwo.play();
+  }
+
+  function handleOpenZoo() {
+    setIsOpen(true);
+    playTigerKing();
+  }
+  function handleCloseZoo() {
+    setIsOpen(false);
+    playCaroleBaskin();
+  }
 
   const [tigerKingSize, setTigerKingSize] = useState(10);
   const [tigerQueenSize, setTigerQueenSize] = useState(10);
@@ -56,8 +78,8 @@ function App() {
         <button onClick={() => setIsOpen('yellow')}>Yellow</button>
         <button onClick={() => setIsOpen('green')}>Green</button> */}
 
-        <button onClick={() => setIsOpen(true)}>Open Zoo</button>
-        <button onClick={() => setIsOpen(false)}>Close Zoo</button>
+        <button onClick={handleOpenZoo}>Open Zoo</button>
+        <button onClick={handleCloseZoo}>Close Zoo</button>
       </div>
 
       <Parade animals={traffic} />

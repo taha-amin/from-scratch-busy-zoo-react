@@ -1,6 +1,14 @@
 import React from 'react';
 
 export default function IsOpen({ isOpen }) {
+  // function start() {
+  //   audio.play();
+  // }
+
+  // function end() {
+  //   audioTwo.play();
+  // }
+
   return (
     //this component takes in isOpen prop and renders differently based on whether isOpen props is true or false
     <div className="is-open">
