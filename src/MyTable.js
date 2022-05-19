@@ -18,10 +18,10 @@ export default function MyTable() {
         title="Customer Data"
         options={{
           headerStyle: {
-            background: 'magenta',
+            background: 'red',
           },
           rowStyle: {
-            background: 'cyan',
+            background: 'green',
           },
         }}
         localization={{
