@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('when user clicks on Cheetah button, a cheetah emoji pops up', () => {
+test('when user clicks on close zoo or open zoo button, text on screen changes', () => {
   render(<App />);
   const closeZooButton = screen.queryByText(/Close zoo/i);
   const openZooButton = screen.queryByText(/Open zoo/i);
