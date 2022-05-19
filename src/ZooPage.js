@@ -94,4 +94,4 @@ function ZooPage() {
   );
 }
 
-export default App;
+export default ZooPage;
