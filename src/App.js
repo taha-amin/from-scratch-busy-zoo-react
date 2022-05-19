@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import './App.css';
 
+import CustomButton from './CustomButton';
+
 import IsOpen from './OpenSign';
 import Parade from './AnimalParade';
 
@@ -78,15 +80,15 @@ function App() {
         <button onClick={() => setIsOpen('yellow')}>Yellow</button>
         <button onClick={() => setIsOpen('green')}>Green</button> */}
 
-        <button onClick={handleOpenZoo}>Open Zoo</button>
-        <button onClick={handleCloseZoo}>Close Zoo</button>
+        <CustomButton onClick={handleOpenZoo}>Open Zoo</CustomButton>
+        <CustomButton onClick={handleCloseZoo}>Close Zoo</CustomButton>
       </div>
 
       <Parade animals={traffic} />
       <div className="buttons">
-        <button onClick={() => setTraffic([...traffic, 'cheetah'])}>Cheetah</button>
-        <button onClick={() => setTraffic([...traffic, 'tiger'])}>Tiger</button>
-        <button onClick={() => setTraffic([...traffic, 'panther'])}>Panther</button>
+        <CustomButton onClick={() => setTraffic([...traffic, 'cheetah'])}>Cheetah</CustomButton>
+        <CustomButton onClick={() => setTraffic([...traffic, 'tiger'])}>Tiger</CustomButton>
+        <CustomButton onClick={() => setTraffic([...traffic, 'panther'])}>Panther</CustomButton>
       </div>
     </div>
   );
