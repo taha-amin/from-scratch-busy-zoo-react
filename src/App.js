@@ -1,95 +1,32 @@
-//import logo from './logo.svg';
-import { useState } from 'react';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import ZooPage from './ZooPage';
+import AdminPage from './AdminPage.js';
 
-import IsOpen from './OpenSign';
-import Parade from './AnimalParade';
-
-import TigerKing from '../src/HeyAllYou.mp3';
-import CaroleBasking from '../src/ImNever.mp3';
-
-function App() {
-  //track states for stop lights, animal sizes, and animal parade
-  const audio = new Audio(TigerKing);
-  const audioTwo = new Audio(CaroleBasking);
-
-  const [isOpen, setIsOpen] = useState(true);
-
-  function playTigerKing() {
-    audio.play();
-  }
-  function playCaroleBaskin() {
-    audioTwo.play();
-  }
-
-  function handleOpenZoo() {
-    setIsOpen(true);
-    playTigerKing();
-  }
-  function handleCloseZoo() {
-    setIsOpen(false);
-    playCaroleBaskin();
-  }
-
-  const [tigerKingSize, setTigerKingSize] = useState(10);
-  const [tigerQueenSize, setTigerQueenSize] = useState(10);
-
-  const [traffic, setTraffic] = useState(['cheetah', 'tiger']);
-
+export default function App() {
   return (
-    <div className="App">
-      <div className="fight">
-        <div className="monster">
-          <img src="tigerking.png" width={10 * tigerKingSize} />
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/admin">Admin</Link>
+            </li>
+          </ul>
+        </nav>
 
-          <div className="buttons">
-            {/* Clicking this button will have tiger king size go up by one */}
-            <button onClick={() => setTigerKingSize(tigerKingSize + 1)}>
-              Ima Shoot you before I shoot my cat
-            </button>
-
-            {/* Clicking this button will make carole basking size go up by one */}
-            <button onClick={() => setTigerQueenSize(tigerQueenSize - 1)}>
-              The womans just obsessed with me!
-            </button>
-          </div>
-        </div>
-
-        <div className="monster">
-          <img src="caroleBaskin.png" width={10 * tigerQueenSize} />
-
-          <div className="buttons">
-            {/* Clicking this will make carole basking size go up by one */}
-            <button onClick={() => setTigerQueenSize(tigerQueenSize + 1)}>
-              Hey all you cool cats and kittens!
-            </button>
-
-            {/* Clicking this will make joe exotic size go up by one */}
-            <button onClick={() => setTigerKingSize(tigerKingSize - 1)}>
-              I really appreciate the fact that none of these people like me
-            </button>
-          </div>
-        </div>
+        <Switch>
+          <Route path="/admin">
+            <AdminPage />
+          </Route>
+          <Route path="/">
+            <ZooPage />
+          </Route>
+        </Switch>
       </div>
-
-      <IsOpen isOpen={isOpen} />
-      <div className="buttons">
-        {/* <button onClick={() => setIsOpen('red')}>Red</button>
-        <button onClick={() => setIsOpen('yellow')}>Yellow</button>
-        <button onClick={() => setIsOpen('green')}>Green</button> */}
-
-        <button onClick={handleOpenZoo}>Open Zoo</button>
-        <button onClick={handleCloseZoo}>Close Zoo</button>
-      </div>
-
-      <Parade animals={traffic} />
-      <div className="buttons">
-        <button onClick={() => setTraffic([...traffic, 'cheetah'])}>Cheetah</button>
-        <button onClick={() => setTraffic([...traffic, 'tiger'])}>Tiger</button>
-        <button onClick={() => setTraffic([...traffic, 'panther'])}>Panther</button>
-      </div>
-    </div>
+    </Router>
   );
 }
-
-export default App;
